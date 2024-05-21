@@ -1,6 +1,13 @@
 name: Publish Docker image
 
 on:
+  push: # 当任何分支有新的提交时
+  pull_request: # 当有新的 pull request 时或已有的 pull request 发生变化时
+  pull_request_target:
+    types:
+      - opened
+      - synchronize
+      - reopened
   workflow_dispatch:
   release:
     types: [published]
